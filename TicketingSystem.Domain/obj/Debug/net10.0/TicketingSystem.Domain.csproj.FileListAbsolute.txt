@@ -1,0 +1,11 @@
+C:\Users\muntean\Documents\UTM A3S3\TMPPP\TicketingSystem.Domain\bin\Debug\net10.0\TicketingSystem.Domain.deps.json
+C:\Users\muntean\Documents\UTM A3S3\TMPPP\TicketingSystem.Domain\bin\Debug\net10.0\TicketingSystem.Domain.dll
+C:\Users\muntean\Documents\UTM A3S3\TMPPP\TicketingSystem.Domain\bin\Debug\net10.0\TicketingSystem.Domain.pdb
+C:\Users\muntean\Documents\UTM A3S3\TMPPP\TicketingSystem.Domain\obj\Debug\net10.0\TicketingSystem.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\muntean\Documents\UTM A3S3\TMPPP\TicketingSystem.Domain\obj\Debug\net10.0\TicketingSystem.Domain.AssemblyInfoInputs.cache
+C:\Users\muntean\Documents\UTM A3S3\TMPPP\TicketingSystem.Domain\obj\Debug\net10.0\TicketingSystem.Domain.AssemblyInfo.cs
+C:\Users\muntean\Documents\UTM A3S3\TMPPP\TicketingSystem.Domain\obj\Debug\net10.0\TicketingSystem.Domain.csproj.CoreCompileInputs.cache
+C:\Users\muntean\Documents\UTM A3S3\TMPPP\TicketingSystem.Domain\obj\Debug\net10.0\TicketingSystem.Domain.dll
+C:\Users\muntean\Documents\UTM A3S3\TMPPP\TicketingSystem.Domain\obj\Debug\net10.0\refint\TicketingSystem.Domain.dll
+C:\Users\muntean\Documents\UTM A3S3\TMPPP\TicketingSystem.Domain\obj\Debug\net10.0\TicketingSystem.Domain.pdb
+C:\Users\muntean\Documents\UTM A3S3\TMPPP\TicketingSystem.Domain\obj\Debug\net10.0\ref\TicketingSystem.Domain.dll

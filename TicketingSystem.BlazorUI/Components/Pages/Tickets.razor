@@ -1,0 +1,100 @@
+@page "/tickets"
+@inject HttpClient Http
+
+<PageTitle>All Tickets - TicketCore</PageTitle>
+
+<div class="header d-flex justify-content-between align-items-center mb-4">
+    <div>
+        <h1>Active Tickets</h1>
+        <p class="text-muted">Manage and monitor all system issues.</p>
+    </div>
+    <a href="create-ticket" class="btn-premium">
+        <span class="bi bi-plus-lg"></span> New Ticket
+    </a>
+</div>
+
+<div class="ticket-list">
+    @if (tickets == null)
+    {
+        <div class="glass-card text-center">
+            <p>Loading tickets from API...</p>
+        </div>
+    }
+    else if (!tickets.Any())
+    {
+        <div class="glass-card text-center">
+            <p>No tickets found. Create your first one!</p>
+        </div>
+    }
+    else
+    {
+        @foreach (var ticket in tickets)
+        {
+            <div class="glass-card ticket-item">
+                <div>
+                    <h4 class="mb-1">@ticket.Title</h4>
+                    <p class="text-muted small mb-0">Created by @ticket.CreatedBy • @ticket.CreatedAt.ToShortDateString()</p>
+                </div>
+                <div>
+                    <span class="ticket-status @GetStatusClass(ticket.Status)">@ticket.Status</span>
+                </div>
+                <div>
+                    <span class="badge @GetPriorityClass(ticket.Priority)">@ticket.Priority</span>
+                </div>
+                <div>
+                    <button class="btn btn-link text-accent">Details</button>
+                </div>
+            </div>
+        }
+    }
+</div>
+
+<style>
+    .badge-urgent { background: rgba(239, 68, 68, 0.2); color: var(--danger); border: 1px solid var(--danger); }
+    .badge-high { background: rgba(245, 158, 11, 0.2); color: var(--warning); border: 1px solid var(--warning); }
+    .badge-medium { background: rgba(99, 102, 241, 0.2); color: var(--primary); border: 1px solid var(--primary); }
+    .badge-low { background: rgba(148, 163, 184, 0.2); color: var(--text-muted); border: 1px solid var(--text-muted); }
+    
+    .badge {
+        padding: 0.25rem 0.5rem;
+        border-radius: 4px;
+        font-size: 0.7rem;
+        font-weight: bold;
+    }
+</style>
+
+@code {
+    private IEnumerable<TicketDto>? tickets;
+
+    protected override async Task OnInitializedAsync()
+    {
+        try {
+            tickets = await Http.GetFromJsonAsync<IEnumerable<TicketDto>>("api/tickets");
+        } catch {
+            // Demo data if API is not running
+            tickets = new List<TicketDto> {
+                new TicketDto(Guid.NewGuid(), "Fix login issue", "Users cannot login with Gmail", TicketStatus.Open, TicketPriority.Urgent, "John Doe", null, DateTime.Now),
+                new TicketDto(Guid.NewGuid(), "Update CSS", "Button colors are wrong", TicketStatus.InProgress, TicketPriority.Medium, "Alice Smith", "Bob UI", DateTime.Now.AddDays(-1)),
+                new TicketDto(Guid.NewGuid(), "Database migration", "Add new fields to User", TicketStatus.Resolved, TicketPriority.High, "Charlie", "David", DateTime.Now.AddDays(-2))
+            };
+        }
+    }
+
+    private string GetStatusClass(TicketStatus status) => status switch
+    {
+        TicketStatus.Open => "status-open",
+        TicketStatus.InProgress => "status-inprogress",
+        TicketStatus.Resolved => "status-resolved",
+        TicketStatus.Closed => "status-closed",
+        _ => ""
+    };
+
+    private string GetPriorityClass(TicketPriority priority) => priority switch
+    {
+        TicketPriority.Urgent => "badge-urgent",
+        TicketPriority.High => "badge-high",
+        TicketPriority.Medium => "badge-medium",
+        TicketPriority.Low => "badge-low",
+        _ => ""
+    };
+}
