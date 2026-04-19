@@ -80,3 +80,4 @@ C:\Users\muntean\Documents\UTM A3S3\TMPPP\TicketingSystem.WebAPI\obj\Debug\net10
 C:\Users\muntean\Documents\UTM A3S3\TMPPP\TicketingSystem.WebAPI\obj\Debug\net10.0\TicketingSystem.WebAPI.pdb
 C:\Users\muntean\Documents\UTM A3S3\TMPPP\TicketingSystem.WebAPI\obj\Debug\net10.0\TicketingSystem.WebAPI.genruntimeconfig.cache
 C:\Users\muntean\Documents\UTM A3S3\TMPPP\TicketingSystem.WebAPI\obj\Debug\net10.0\ref\TicketingSystem.WebAPI.dll
+C:\Users\muntean\Documents\UTM A3S3\TMPPP\TicketingSystem.WebAPI\obj\Debug\net10.0\TicketingSystem.WebAPI.sourcelink.json

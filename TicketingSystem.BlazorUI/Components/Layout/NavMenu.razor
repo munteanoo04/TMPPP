@@ -1,61 +1,85 @@
-<div class="top-row ps-3 navbar navbar-dark">
+<div class="top-row navbar navbar-dark mb-4">
     <div class="container-fluid">
-        <a class="navbar-brand" href="">TicketCore</a>
+        <a class="navbar-brand d-flex align-items-center gap-2" href="">
+            <i class="bi bi-shield-check text-primary fs-3"></i>
+            <span class="nav-text">TicketCore</span>
+        </a>
     </div>
 </div>
 
-<div class="nav-scrollable">
-    <nav class="flex-column">
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
-                <span class="bi bi-house-door-fill" aria-hidden="true"></span> Dashboard
-            </NavLink>
-        </div>
+<nav class="flex-column gap-2">
+    <div class="nav-item">
+        <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
+            <i class="bi bi-grid-1x2-fill"></i>
+            <span class="nav-text">Dashboard</span>
+        </NavLink>
+    </div>
 
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="tickets">
-                <span class="bi bi-list-nested" aria-hidden="true"></span> All Tickets
-            </NavLink>
-        </div>
+    <div class="nav-item">
+        <NavLink class="nav-link" href="tickets">
+            <i class="bi bi-kanban"></i>
+            <span class="nav-text">All Tickets</span>
+        </NavLink>
+    </div>
 
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="create-ticket">
-                <span class="bi bi-plus-square-fill" aria-hidden="true"></span> New Ticket
-            </NavLink>
-        </div>
-    </nav>
+    <div class="nav-item">
+        <NavLink class="nav-link" href="create-ticket">
+            <i class="bi bi-plus-circle-fill"></i>
+            <span class="nav-text">New Ticket</span>
+        </NavLink>
+    </div>
+</nav>
+
+<div class="mt-auto pt-5 border-top border-secondary">
+    <div class="nav-item opacity-50">
+        <NavLink class="nav-link" href="settings">
+            <i class="bi bi-gear-fill"></i>
+            <span class="nav-text">Settings</span>
+        </NavLink>
+    </div>
 </div>
 
 <style>
     .nav-link {
         color: var(--text-muted);
-        padding: 1rem;
+        padding: 0.85rem 1.25rem;
         display: flex;
         align-items: center;
-        gap: 1rem;
+        gap: 1.25rem;
         text-decoration: none;
-        transition: all 0.2s;
-        border-radius: 0.5rem;
-        margin-bottom: 0.5rem;
+        transition: all 0.3s ease;
+        border-radius: 0.85rem;
+        font-weight: 600;
+        border: 1px solid transparent;
+    }
+
+    .nav-link i {
+        font-size: 1.25rem;
+        transition: transform 0.3s ease;
     }
 
     .nav-link:hover {
         background: rgba(255, 255, 255, 0.05);
         color: white;
+        transform: translateX(4px);
+    }
+
+    .nav-link:hover i {
+        transform: scale(1.1);
     }
 
     .nav-link.active {
-        background: rgba(99, 102, 241, 0.1);
+        background: linear-gradient(135deg, rgba(99, 102, 241, 0.15) 0%, rgba(168, 85, 247, 0.05) 100%);
         color: var(--primary);
-        border-left: 4px solid var(--primary);
+        border: 1px solid rgba(99, 102, 241, 0.2);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     }
     
     .navbar-brand {
         font-size: 1.5rem;
         font-weight: 900;
         color: white;
-        text-decoration: none;
-        margin-bottom: 2rem;
-        display: block;
+        text-transform: uppercase;
+        letter-spacing: -0.01em;
     }
 </style>

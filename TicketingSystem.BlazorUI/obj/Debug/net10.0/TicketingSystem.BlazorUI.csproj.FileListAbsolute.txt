@@ -36,7 +36,6 @@ C:\Users\muntean\Documents\UTM A3S3\TMPPP\TicketingSystem.BlazorUI\obj\Debug\net
 C:\Users\muntean\Documents\UTM A3S3\TMPPP\TicketingSystem.BlazorUI\obj\Debug\net10.0\scopedcss\Components\Layout\ReconnectModal.razor.rz.scp.css
 C:\Users\muntean\Documents\UTM A3S3\TMPPP\TicketingSystem.BlazorUI\obj\Debug\net10.0\scopedcss\bundle\TicketingSystem.BlazorUI.styles.css
 C:\Users\muntean\Documents\UTM A3S3\TMPPP\TicketingSystem.BlazorUI\obj\Debug\net10.0\scopedcss\projectbundle\TicketingSystem.BlazorUI.bundle.scp.css
-C:\Users\muntean\Documents\UTM A3S3\TMPPP\TicketingSystem.BlazorUI\obj\Debug\net10.0\compressed\sgggbacggn-{0}-d1dhcw9wh6-d1dhcw9wh6.gz
 C:\Users\muntean\Documents\UTM A3S3\TMPPP\TicketingSystem.BlazorUI\obj\Debug\net10.0\compressed\ccr7msmohs-{0}-bqjiyaj88i-bqjiyaj88i.gz
 C:\Users\muntean\Documents\UTM A3S3\TMPPP\TicketingSystem.BlazorUI\obj\Debug\net10.0\compressed\ga0rjcgtee-{0}-c2jlpeoesf-c2jlpeoesf.gz
 C:\Users\muntean\Documents\UTM A3S3\TMPPP\TicketingSystem.BlazorUI\obj\Debug\net10.0\compressed\8g843h7bjd-{0}-erw9l3u2r3-erw9l3u2r3.gz
@@ -97,3 +96,5 @@ C:\Users\muntean\Documents\UTM A3S3\TMPPP\TicketingSystem.BlazorUI\obj\Debug\net
 C:\Users\muntean\Documents\UTM A3S3\TMPPP\TicketingSystem.BlazorUI\obj\Debug\net10.0\TicketingSystem.BlazorUI.pdb
 C:\Users\muntean\Documents\UTM A3S3\TMPPP\TicketingSystem.BlazorUI\obj\Debug\net10.0\TicketingSystem.BlazorUI.genruntimeconfig.cache
 C:\Users\muntean\Documents\UTM A3S3\TMPPP\TicketingSystem.BlazorUI\obj\Debug\net10.0\ref\TicketingSystem.BlazorUI.dll
+C:\Users\muntean\Documents\UTM A3S3\TMPPP\TicketingSystem.BlazorUI\obj\Debug\net10.0\TicketingSystem.BlazorUI.sourcelink.json
+C:\Users\muntean\Documents\UTM A3S3\TMPPP\TicketingSystem.BlazorUI\obj\Debug\net10.0\compressed\sgggbacggn-{0}-bgaxcohk7c-bgaxcohk7c.gz

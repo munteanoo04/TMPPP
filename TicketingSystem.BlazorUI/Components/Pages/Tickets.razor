@@ -1,29 +1,51 @@
 @page "/tickets"
 @inject HttpClient Http
 
-<PageTitle>All Tickets - TicketCore</PageTitle>
+<PageTitle>Active Tickets - TicketCore</PageTitle>
 
-<div class="header d-flex justify-content-between align-items-center mb-4">
+<div class="header d-flex justify-content-between align-items-center mb-5">
     <div>
-        <h1>Active Tickets</h1>
-        <p class="text-muted">Manage and monitor all system issues.</p>
+        <h1 class="mb-2">Support Dashboard</h1>
+        <p class="text-muted">Real-time overview of system issues and resolutions.</p>
     </div>
     <a href="create-ticket" class="btn-premium">
-        <span class="bi bi-plus-lg"></span> New Ticket
+        <i class="bi bi-plus-lg"></i> CREATE NEW TICKET
     </a>
 </div>
 
+<div class="stat-grid">
+    <div class="glass-card stat-card">
+        <span class="text-muted small font-weight-bold">OPEN TICKETS</span>
+        <div class="stat-value text-accent">@tickets?.Count(t => t.Status == TicketStatus.Open)</div>
+    </div>
+    <div class="glass-card stat-card">
+        <span class="text-muted small font-weight-bold">IN PROGRESS</span>
+        <div class="stat-value text-warning">@tickets?.Count(t => t.Status == TicketStatus.InProgress)</div>
+    </div>
+    <div class="glass-card stat-card">
+        <span class="text-muted small font-weight-bold">RESOLVED TODAY</span>
+        <div class="stat-value text-success">@tickets?.Count(t => t.Status == TicketStatus.Resolved)</div>
+    </div>
+    <div class="glass-card stat-card">
+        <span class="text-muted small font-weight-bold">URGENT</span>
+        <div class="stat-value text-danger">@tickets?.Count(t => t.Priority == TicketPriority.Urgent)</div>
+    </div>
+</div>
+
 <div class="ticket-list">
+    <h3 class="mb-4">Recent Activity</h3>
     @if (tickets == null)
     {
-        <div class="glass-card text-center">
-            <p>Loading tickets from API...</p>
+        <div class="glass-card text-center py-5">
+            <div class="spinner-border text-primary mb-3"></div>
+            <p>Synchronizing with support database...</p>
         </div>
     }
     else if (!tickets.Any())
     {
-        <div class="glass-card text-center">
-            <p>No tickets found. Create your first one!</p>
+        <div class="glass-card text-center py-5">
+            <i class="bi bi-inbox fs-1 text-muted mb-3"></i>
+            <p>Inbox zero! All tickets are currently resolved.</p>
         </div>
     }
     else
@@ -32,8 +54,11 @@
         {
             <div class="glass-card ticket-item">
                 <div>
-                    <h4 class="mb-1">@ticket.Title</h4>
-                    <p class="text-muted small mb-0">Created by @ticket.CreatedBy • @ticket.CreatedAt.ToShortDateString()</p>
+                    <h4 class="mb-2">@ticket.Title</h4>
+                    <div class="d-flex align-items-center gap-3">
+                        <span class="text-muted small"><i class="bi bi-person"></i> @ticket.CreatedBy</span>
+                        <span class="text-muted small"><i class="bi bi-clock"></i> @ticket.CreatedAt.ToShortDateString()</span>
+                    </div>
                 </div>
                 <div>
                     <span class="ticket-status @GetStatusClass(ticket.Status)">@ticket.Status</span>
@@ -42,7 +67,7 @@
                     <span class="badge @GetPriorityClass(ticket.Priority)">@ticket.Priority</span>
                 </div>
                 <div>
-                    <button class="btn btn-link text-accent">Details</button>
+                    <button class="btn btn-link text-accent p-0"><i class="bi bi-arrow-right-circle fs-4"></i></button>
                 </div>
             </div>
         }

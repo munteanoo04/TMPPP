@@ -92,11 +92,13 @@ public class CsvDataExporter : DataExporter { protected override void FormatData
 // BEHAVIORAL PATTERN 5: VISITOR
 // ============================================================================
 
-public interface ITicketVisitor { void Visit(BugTicket bug); void Visit(FeatureTicket feature); }
+// ITicketVisitor has been moved to TicketingSystem.Domain.Entities to resolve circular dependencies.
+
 public class AuditVisitor : ITicketVisitor
 {
     public void Visit(BugTicket bug) => Console.WriteLine($"[Visitor] Auditing BUG: {bug.Title}");
     public void Visit(FeatureTicket feature) => Console.WriteLine($"[Visitor] Auditing FEATURE: {feature.Title}");
+    public void Visit(SupportTicket support) => Console.WriteLine($"[Visitor] Auditing SUPPORT: {support.Title}");
 }
 
 
